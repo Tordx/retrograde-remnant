@@ -1,0 +1,37 @@
+---
+// Button.astro
+interface Props {
+  label: string;
+  onClick: string;
+}
+
+const { label, onClick } = Astro.props;
+---
+
+<button onclick={onClick} id="reach-out-btn" >
+  <span>{label}</span>
+</button>
+
+<script>
+</script>
+
+<style>
+  #reach-out-btn {
+    background: linear-gradient(50deg, skyblue, pink);
+    outline: none;
+    border: 2px solid pink;
+    box-shadow: 3px 3px 0px #000000;
+    padding-inline: 1rem;
+    height: 40px;
+    font-size: 24px;
+    font-family: "Poppins", "sans-serif";
+    font-weight: 500;
+    border-radius: 0.25rem;
+    margin-block: 2rem;
+    cursor: pointer;
+  }
+
+  #reach-out-btn:active {
+    scale: 95%;
+  }
+</style>

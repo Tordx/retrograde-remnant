@@ -1,0 +1,8 @@
+---
+import background from "../assets/background.svg";
+---
+
+<div id="container" class="flex justify-center items-center">
+  <img class="fixed top-0 left-0 w-full h-full -z-1 opacity-80 filter blur-2xl" src={background.src} alt="" fetchpriority="high" />
+    <slot />
+</div>

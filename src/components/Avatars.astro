@@ -1,0 +1,50 @@
+---
+import { IMAGES } from "../const";
+
+const { id } = Astro.props;
+
+---
+
+<style>
+  .avatar {
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    filter: drop-shadow(0px 5px 0px #000000);
+
+  }
+  .avatar.active {
+    opacity: 1;
+  }
+  .avatar-container {
+    position: relative;
+    object-fit: contain;
+    width: 408px; /* adjust to your image size */
+    height: auto;
+  }
+</style>
+
+<div id={id} class="avatar-container">
+  {IMAGES.map((img, i) => (
+    <img 
+      class="avatar" 
+      src={img.src} 
+      alt={`Avatar ${i + 1}`} 
+      data-index={i} 
+    />
+  ))}
+</div>
+
+<script>
+  const images = document.querySelectorAll('.avatar')
+  let current = 0
+
+  function showNext() {
+    images[current].classList.remove('active')
+    current = (current + 1) % images.length
+    images[current].classList.add('active')
+  }
+
+  images[current].classList.add('active')
+  setInterval(showNext, 5000) // change every 2s
+</script>

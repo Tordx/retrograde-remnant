@@ -1,0 +1,29 @@
+---
+import { NAV_ITEMS } from "../const";
+---
+
+<header class="w-full h-auto absolute top-0 flex justify-center items-center">
+  <div class="w-full max-w-1440px py-8 flex justify-end items-center px-14">
+    <div id="navitems" class="flex flex-row gap-8">
+      {
+        NAV_ITEMS.map((item) => {
+          return <a href={item.path} class="nav-label active:scale-95 hover:text-[#87ceeb]">{item.label}</a>;
+        })
+      }
+    </div>
+  </div>
+</header>
+<style>
+  .nav-label {
+    cursor: pointer;
+    font-weight: 500;
+    text-decoration: none;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+    supported by Chrome, Edge, Opera and Firefox */
+  }
+</style>

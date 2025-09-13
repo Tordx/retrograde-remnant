@@ -1,8 +1,3 @@
----
-import App from "./home/app.astro";
-import "../global.css";
----
-
 <!doctype html>
 <html lang="en">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -16,8 +11,11 @@ import "../global.css";
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <meta name="generator" content={Astro.generator} />
   <title>Astro Basics</title>
+
   <body>
-    <App />
+    <main>
+      <slot />
+    </main>
   </body>
 </html>
 
@@ -25,6 +23,8 @@ import "../global.css";
   html,
   body {
     margin: 0;
+    width: 100%;
+    height: 100%;
     font-family: "Poppins", sans-serif;
   }
 </style>
