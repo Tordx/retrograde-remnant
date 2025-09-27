@@ -1,0 +1,40 @@
+---
+import { Image } from "astro:assets";
+
+// Accept `letter` as a prop (optional)
+export interface Props {
+  letter?: string;
+}
+
+const { letter } = Astro.props;
+
+const images = import.meta.glob<{ default: any }>(
+  "/src/assets/stacks/*.{png,jpg,jpeg,svg,gif,webp}",
+  { eager: true }
+);
+
+// Map and filter image entries
+const imageEntries = Object.entries(images)
+  .map(([path, module]) => {
+    const fileName = path.split("/").pop() ?? "";
+    const src = module.default;
+    return { src, alt: fileName, fileName };
+  })
+  .filter(({ fileName }) => {
+    // If a letter is provided, filter by `${letter}_`
+    if (letter) return fileName.startsWith(`${letter}_`);
+    return true; // Otherwise, show all
+  });
+---
+<div class="grid grid-cols-5 gap-10">
+  {
+    imageEntries.map(({ src, alt }) => (
+      <Image
+        src={src}
+        alt={alt}
+        height={100}
+        class="max-w-[100px] h-[100px] w-auto object-contain drop-shadow-sm"
+      />
+    ))
+  }
+</div>

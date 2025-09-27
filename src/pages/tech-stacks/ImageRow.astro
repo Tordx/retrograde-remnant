@@ -1,0 +1,15 @@
+---
+import Image from "astro/components/Image.astro";
+import ImageGrid from "./ImageGrid.astro";
+import Avatars from "../../components/Avatars.astro";
+type Props = {
+  letter: string;
+  image: { src: string };
+};
+const { letter, image } = Astro.props;
+---
+
+<section class="flex flex-row justify-between items-center">
+  <img class="avatar" src={image.src} alt={`Avatar ${image.src + 1}`} />
+  <ImageGrid letter={letter} />
+</section>

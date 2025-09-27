@@ -10,8 +10,8 @@ export const NAV_ITEMS: { label: string; path: string }[] = [
     path: '/',
   },
   {
-    label: 'About',
-    path: '/about',
+    label: 'Tech Stack',
+    path: '/tech-stacks',
   },
   {
     label: 'Contact',
