@@ -1,7 +1,9 @@
 ---
-import { IMAGES } from "../const";
-
-const { id } = Astro.props;
+type Props = {
+  id?: string;
+  images: any[]
+}
+const { id, images } = Astro.props;
 
 ---
 
@@ -25,7 +27,7 @@ const { id } = Astro.props;
 </style>
 
 <div id={id} class="avatar-container">
-  {IMAGES.map((img, i) => (
+  {images.map((img, i) => (
     <img 
       class="avatar" 
       src={img.src} 

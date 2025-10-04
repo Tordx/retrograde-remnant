@@ -1,33 +1,46 @@
 ---
-import Avatars from "../../components/Avatars.astro";
 import Button from "../../components/Button.astro";
 import Container from "../../components/Container.astro";
 import ReachOut from "../../components/ReachOut.astro";
-import { IMAGES } from "../../const";
+import avatar_2 from "../../assets/avatar_2.png";
+import Avatars from "../../components/Avatars.astro";
+import { IMAGES_ABOUT } from "../../const";
 ---
 
-<Container>
-  <section id="hero" class="w-full flex flex-col max-w-[1440px] px-12 md:flex-row">
-    <div id="dets-container">
-      <div id="i-am">
-        <span id="span-hi">Hi, <strong id="strong-i-am">I am Roven!</strong></span><br />
-        <span id="span-hi">a <strong id="typing" aria-live="polite"></strong></span>
-      </div>
-      <Button onClick="openAbout()" label="About Me" />
-      <p>
-        I’m a versatile full-stack developer with a strong focus on the frontend. I build responsive web and mobile apps
-        using multiple modern frameworks and tools—blending clean UI, smooth interactions, and solid engineering to
-        deliver experiences that look great and feel even better.
-      </p>
-      <span id="span-ways">Ways to Reach Me</span>
-      <ReachOut />
+<section
+  id="hero"
+  class="w-full flex flex-col max-w-[1440px] px-12 md:flex-row h-auto"
+>
+  <div id="dets-container">
+    <div id="i-am">
+      <span id="span-hi"
+        >I'm <strong id="strong-i-am">Roven Kyle Narra</strong></span
+      ><br />
     </div>
+    <p>
+      I'm a Computer Science graduate from Pangasinan State University with 4
+      years of hands-on experience—2 years in professional roles and 2 years as
+      a freelancer. While I focus on frontend development, I often work across
+      the full stack, from building APIs to managing deployments. I enjoy
+      turning complex ideas into clean, responsive interfaces and crafting
+      seamless user experiences backed by solid engineering.
+      <br />
+      <br />
+      Outside of tech,
+      <br />
+      I'm a motorcycle and car enthusiast who finds joy in engines, open roads, and
+      weekend rides. I also love cooking — whether it’s experimenting with new dishes
+      or perfecting comfort food classics, the kitchen is my second creative space.
+    </p>
+    <Button onClick="openAbout()" label="Hire Me" />
+    <span id="span-ways" class="flex">Ways to Reach Me</span>
+    <ReachOut />
+  </div>
 
-    <div id="logo-container">
-      <Avatars images={IMAGES} />
-    </div>
-  </section>
-</Container>
+  <div id="logo-container">
+    <Avatars images={IMAGES_ABOUT} />
+  </div>
+</section>
 
 <script is:inline>
   (() => {

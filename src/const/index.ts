@@ -1,8 +1,11 @@
 import avatar_1 from '../assets/avatar_1.png'
 import avatar_2 from '../assets/avatar_2.png'
-import avatar_3 from '../assets/avatar_3.png'
+import avatar_5 from '../assets/avatar_5.png'
+import avatar_6 from '../assets/avatar_6.png'
+import avatar_7 from '../assets/avatar_7.png'
 
 export const IMAGES = [avatar_1, avatar_2]
+export const IMAGES_ABOUT = [avatar_5, avatar_6, avatar_7]
 
 export const NAV_ITEMS: { label: string; path: string }[] = [
   {
@@ -10,8 +13,8 @@ export const NAV_ITEMS: { label: string; path: string }[] = [
     path: '/',
   },
   {
-    label: 'Tech Stack',
-    path: '/tech-stacks',
+    label: 'About',
+    path: '/about',
   },
   {
     label: 'Contact',

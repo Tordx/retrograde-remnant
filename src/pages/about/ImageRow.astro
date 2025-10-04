@@ -1,0 +1,21 @@
+---
+import { map } from "astro:schema";
+import ImageGrid from "./ImageGrid.astro";
+type Props = {
+  letter: {a: string; b: string}[];
+  image?: { src: string };
+  title?: string;
+};
+const { letter, title } = Astro.props;
+---
+
+<div class="w-full max-w-[1440px] px-12 2xl:px-4 flex flex-col justify-center items-start py-12">
+  <div class="text-[32px] font-bold text-center mb-20">{title}</div>
+  <section
+    class="w-full flex flex-row justify-start items-center"
+  >
+    <div class="flex flex-col gap-12">
+      {letter?.map((item) => <ImageGrid letter={item.a} title={item.b} />)}
+    </div>
+  </section>
+</div>
