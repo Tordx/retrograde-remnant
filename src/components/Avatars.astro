@@ -28,7 +28,8 @@ const { id, images } = Astro.props;
 
 <div id={id} class="avatar-container">
   {images.map((img, i) => (
-    <img 
+    <img
+      draggable="false"
       class="avatar" 
       src={img.src} 
       alt={`Avatar ${i + 1}`} 

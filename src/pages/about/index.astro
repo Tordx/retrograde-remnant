@@ -3,20 +3,23 @@ import Header from "../../components/Header.astro";
 import Main from "../../components/Main.astro";
 import Layout from "../../layouts/Layout.astro";
 import "../../global.css";
-import ImageList from "./ImageList.astro";
+import ImageList from "./Images/ImageList.astro";
 import Container from "../../components/Container.astro";
 import Hero from "./Hero.astro";
 import ScrollDown from "./ScrollDown.astro";
+import Experience from "./Experience/index.astro";
+import Footer from "../../layouts/Footer.astro";
 ---
 
 <Layout>
   <Header />
   <Main>
-    <Container
-      class="2xl:mx-0 flex-col h-full pt-35 justify-start items-start"
-    >
+    <Container class="2xl:mx-0 flex-col h-full pt-35 justify-start items-start">
       <Hero />
+      <Experience />
       <ImageList />
+
+    <Footer />
     </Container>
     <ScrollDown />
   </Main>

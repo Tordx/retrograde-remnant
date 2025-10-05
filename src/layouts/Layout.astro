@@ -1,30 +1,60 @@
+---
+---
+
 <!doctype html>
 <html lang="en">
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-    rel="stylesheet"
-  />
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width" />
-  <link rel="icon" type="image/svg+xml" href="/rkn_ic.svg" />
-  <meta name="generator" content={Astro.generator} />
-  <title>Roven Kyle Narra</title>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/rkn_ic.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Roven Kyle Narra</title>
+    <style>
+      html, body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        font-family: "Poppins", sans-serif;
+      }
 
+      .desktop-only {
+        display: none;
+      }
+
+      .mobile-message {
+        display: block;
+        padding: 2rem;
+        text-align: center;
+      }
+
+      @media screen and (min-width: 1024px) {
+        .desktop-only {
+          display: block;
+        }
+
+        .mobile-message {
+          display: none;
+        }
+      }
+    </style>
+  </head>
   <body>
     <main>
-      <slot />
+      <!-- Only visible on desktop -->
+      <div class="desktop-only">
+        <slot />
+      </div>
+
+      <!-- Fallback message for mobile -->
+      <div class="mobile-message">
+        <p>Can only be viewed on desktop for now</p>
+      </div>
     </main>
   </body>
 </html>
-
-<style>
-  html,
-  body {
-    margin: 0;
-    width: 100%;
-    height: 100%;
-    font-family: "Poppins", sans-serif;
-  }
-</style>

@@ -1,0 +1,25 @@
+---
+// DesktopOnly.astro
+const { default: children } = Astro.slots;
+---
+
+<div id="desktop-only-container">
+  <noscript>
+    <p>This content requires JavaScript to display properly.</p>
+  </noscript>
+</div>
+
+<script type="module">
+  const container = document.getElementById('desktop-only-container');
+
+  function renderContent() {
+    if (window.innerWidth >= 1024) {
+      container.innerHTML = `<slot/>`;
+    } else {
+      container.innerHTML = `<p style="padding: 2rem; text-align: center;">Can only be viewed on desktop for now</p>`;
+    }
+  }
+
+  renderContent();
+  window.addEventListener('resize', renderContent);
+</script>
