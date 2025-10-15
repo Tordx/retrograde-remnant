@@ -13,7 +13,7 @@ const { item } = Astro.props;
   <div class="px-6 w-full flex flex-row justify-start items-center gap-6">
     <img
       draggable={false}
-      src={item?.image}
+      src={item?.image.src}
       alt={item?.company ?? ""}
       height={100}
       class="max-w-[100px] my-8 h-[100px] object-contain drop-shadow-sm"
