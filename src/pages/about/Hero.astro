@@ -1,28 +1,28 @@
 ---
 import Button from "../../components/Button.astro";
-import Container from "../../components/Container.astro";
 import ReachOut from "../../components/ReachOut.astro";
-import avatar_2 from "../../assets/avatar_2.png";
 import Avatars from "../../components/Avatars.astro";
 import { IMAGES_ABOUT } from "../../const";
+
 ---
 
 <section
   id="hero"
-  class="w-full flex flex-col max-w-[1440px] px-12 md:flex-row h-auto"
+  class="bg-[#000814] text-white w-full flex flex-col max-w-[1440px] px-12 md:flex-row h-auto"
 >
   <div id="dets-container">
-    <div id="i-am">
-      <span id="span-hi"><strong id="strong-i-am">Roven Kyle Narra</strong></span
+    <div id="i-am" class="text-[#ffde69]">
+      <span id="span-hi"
+        ><strong id="strong-i-am">Roven Kyle Narra</strong></span
       ><br />
     </div>
-    <p>
-      A Computer Science graduate from Pangasinan State University with 4
-      years of hands-on experience—2 years in professional roles and 2 years as
-      a freelancer. While I focus on frontend development, I often work across
-      the full stack, from building APIs to managing deployments. I enjoy
-      turning complex ideas into clean, responsive interfaces and crafting
-      seamless user experiences backed by solid engineering.
+    <p class="text-white">
+      A Computer Science graduate from Pangasinan State University with 4 years
+      of hands-on experience—2 years in professional roles and 2 years as a
+      freelancer. While I focus on frontend development, I often work across the
+      full stack, from building APIs to managing deployments. I enjoy turning
+      complex ideas into clean, responsive interfaces and crafting seamless user
+      experiences backed by solid engineering.
       <br />
       <br />
       Outside of tech,
@@ -31,7 +31,7 @@ import { IMAGES_ABOUT } from "../../const";
       weekend rides. I also love cooking — whether it’s experimenting with new dishes
       or perfecting comfort food classics, the kitchen is my second creative space.
     </p>
-    <Button onClick="openAbout()" label="Hire Me" />
+    <Button onClick="openAbout()" label="Download Resume" />
     <span id="span-ways" class="flex">Ways to Reach Me</span>
     <ReachOut />
   </div>
@@ -85,8 +85,11 @@ import { IMAGES_ABOUT } from "../../const";
   })();
 
   window.openAbout = () => {
-    window.location.href = "about";
-  };
+  const link = document.createElement("a");
+  link.href = "/rkn-resume.pdf";
+  link.download = "roven-kyle-narra-cv.pdf";
+  link.click();
+};
 </script>
 
 <style>
@@ -98,7 +101,7 @@ import { IMAGES_ABOUT } from "../../const";
     max-height: 500px;
     min-width: 500px;
     min-height: 500px;
-    background: linear-gradient(var(--angle), skyblue, pink, violet);
+    background: linear-gradient(var(--angle), #003566, #f0cb46, violet);
     background-size: 300% 300%;
     border-radius: 100%;
     display: flex;
@@ -164,7 +167,7 @@ import { IMAGES_ABOUT } from "../../const";
   #span-ways {
     font-size: 1.5rem;
     font-weight: 600;
-    color: pink;
+    color: #f0cb46;
     filter: drop-shadow(2px 3px 0px #000000);
   }
 

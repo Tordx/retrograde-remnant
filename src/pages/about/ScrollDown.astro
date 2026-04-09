@@ -3,9 +3,32 @@ import TripleChevronDown from "../../components/TripleChevronDown.astro";
 ---
 
 <div
-  class="absolute relative w-full flex justify-center items-center bottom-10"
+  id="scroll-indicator"
+  class="absolute w-full flex justify-center items-center bottom-10 transition-all duration-500 ease-in-out opacity-100 translate-y-0"
 >
   <TripleChevronDown />
   <span class="font-bold absolute bottom-12">Scroll Down</span>
 </div>
+
+<script is:inline>
+  const indicator = document.getElementById("scroll-indicator");
+
+  window.addEventListener("scroll", () => {
+    if (!indicator) return;
+
+    if (window.scrollY > 100) {
+      indicator.classList.add("hide");
+    } else {
+      indicator.classList.remove("hide");
+    }
+  });
+</script>
+
+<style>
+  #scroll-indicator.hide {
+  opacity: 0;
+  transform: translateY(20px); /* slides down while fading */
+  pointer-events: none;
+}
+</style>
 

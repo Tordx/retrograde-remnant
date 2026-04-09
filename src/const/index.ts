@@ -9,10 +9,17 @@ import Freelance from '../assets/Freelance.png'
 import CtyStore from '../assets/ctystore.png'
 import Papps from '../assets/papps.jpg'
 import Sitel from '../assets/sitel.png'
+import Vertere from '../assets/vertere.png'
 export const IMAGES = [avatar_1, avatar_2]
 export const IMAGES_ABOUT = [avatar_5, avatar_6, avatar_7]
 
 export const EXPERIENCES: {role: string; company: string; range: string; image: any }[] = [
+  {
+    role: "Programmer Analyst II",
+    company: "Veretere Global Solutions - Assigned to Metrobank",
+    range: "January 2026 - Present",
+    image: Vertere,
+  },
   {
     role: "React Native Developer",
     company: "8 Bacus",
@@ -61,14 +68,6 @@ export const NAV_ITEMS: { label: string; path: string }[] = [
   {
     label: 'About',
     path: '/about',
-  },
-  {
-    label: 'Contact',
-    path: '/contact',
-  },
-  {
-    label: 'Projects',
-    path: '/projects',
   },
 ]
 

@@ -14,12 +14,12 @@ import { IMAGES } from "../../const";
         <span id="span-hi">a <strong id="typing" aria-live="polite"></strong></span>
       </div>
       <Button onClick="openAbout()" label="About Me" />
-      <p>
+      <p class="text-white">
         I’m a versatile full-stack developer with a strong focus on the frontend. I build responsive web and mobile apps
         using multiple modern frameworks and tools—blending clean UI, smooth interactions, and solid engineering to
         deliver experiences that look great and feel even better.
       </p>
-      <span id="span-ways">Ways to Reach Me</span>
+      <p id="span-ways">Ways to Reach Me</p>
       <ReachOut />
     </div>
 
@@ -31,7 +31,7 @@ import { IMAGES } from "../../const";
 
 <script is:inline>
   (() => {
-    const careers = ["Front-end Developer", "Mobile Developer", "UI Designer"];
+    const careers = ["Front-end Developer", "Mobile Developer", "UI Designer", "Freelance Consultant"];
 
     let careerIndex = 0;
     let charIndex = 0;
@@ -86,7 +86,7 @@ import { IMAGES } from "../../const";
     max-height: 500px;
     min-width: 500px;
     min-height: 500px;
-    background: linear-gradient(var(--angle), skyblue, pink, violet);
+    background: linear-gradient(var(--angle), #E4C412, #E4C412, #E4C412);
     background-size: 300% 300%;
     border-radius: 100%;
     display: flex;
@@ -147,17 +147,20 @@ import { IMAGES } from "../../const";
 
   #span-hi {
     font-size: 2.25rem;
+    color: white;
   }
 
   #span-ways {
     font-size: 1.5rem;
     font-weight: 600;
-    color: pink;
-    filter: drop-shadow(2px 3px 0px #000000);
+    color: #f0cb46;
+    filter: drop-shadow(2px 3px 0px black);
+    margin-top: 20px;
   }
 
   #strong-i-am {
     font-size: 3rem;
+    color: #f0cb46;
   }
 
   strong {
@@ -166,10 +169,11 @@ import { IMAGES } from "../../const";
 
   /* typing cursor */
   #typing {
-    border-right: 2px solid #000;
+    border-right: 2px solid #cca000;
     padding-right: 4px;
     animation: blink 0.8s infinite;
     font-size: 3rem;
+    color: #f0cb46;
   }
 
   p {
@@ -183,7 +187,7 @@ import { IMAGES } from "../../const";
       border-color: transparent;
     }
     50% {
-      border-color: black;
+      border-color: #cca000;
     }
   }
 
